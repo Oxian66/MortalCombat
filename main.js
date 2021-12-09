@@ -16,7 +16,7 @@ const player2 = {
         console.log(`${player2.name} fight`)
     },
 };
-const createPlayer = () => {
+const createPlayer = (player, playerName) => {
     const $player1 = document.createElement("div");
     $player1.classList.add("player1");
 
@@ -28,24 +28,23 @@ const createPlayer = () => {
 
     const $life = document.createElement("div");
     $life.classList.add("life");
-    $life.style.width = "100%";
+    $life.style.width = playerName.hp + "%";
 
     const $name = document.createElement("div");
     $name.classList.add("name");
-    $name.innerText = "SCORPION";
+    $name.innerText = "playerName.name";
 
     const $img = document.createElement("img");
-    $img.src = "http://reactmarathon-api.herokuapp.com/assets/scorpion.gif";
+    $img.src = "namePlayer.img";
 
     $player1.appendChild("$progressbar");
     $player1.appendChild("$character");
     $progressbar.appendChild("$life");
     $progressbar.appendChild("$name");
     $character.appendChild("$img");
-};
+    const $arenas = document.querySelector(".arenas");
+    $arenas.appendChild("$player1");
 
-const $arenas = document.createElement("div");
-const playerOne = createPlayer('player1', player1);
-$arenas.appendChild("playerOne");
-const playerTwo = createPlayer('$player1', player2);
-$arenas.appendChild("playerTwo");
+};
+createPlayer('player1', player1);
+createPlayer('$player1', player2);

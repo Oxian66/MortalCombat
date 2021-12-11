@@ -16,7 +16,7 @@ const player2 = {
         console.log(`${player2.name} fight`)
     },
 };
-const createPlayer = (player, playerName) => {
+const createPlayer = (playerClass, playerName) => {
     const $player1 = document.createElement("div");
     $player1.classList.add("player1");
 
@@ -32,19 +32,19 @@ const createPlayer = (player, playerName) => {
 
     const $name = document.createElement("div");
     $name.classList.add("name");
-    $name.innerText = "playerName.name";
+    $name.innerText = playerName.name;
 
     const $img = document.createElement("img");
-    $img.src = "namePlayer.img";
-
-    $player1.appendChild("$progressbar");
-    $player1.appendChild("$character");
-    $progressbar.appendChild("$life");
-    $progressbar.appendChild("$name");
-    $character.appendChild("$img");
+    $img.src = playerName.img;
     const $arenas = document.querySelector(".arenas");
-    $arenas.appendChild("$player1");
+    $arenas.appendChild($player1);
 
+    $player1.appendChild($progressbar);
+    $player1.appendChild($character);
+    $progressbar.appendChild($life);
+    $progressbar.appendChild($name);
+    $character.appendChild($img);
 };
+
 createPlayer('player1', player1);
-createPlayer('$player1', player2);
+createPlayer('player2', player2);

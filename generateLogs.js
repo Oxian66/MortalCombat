@@ -52,22 +52,33 @@ const generateLogs = (type, player1, player2) => {
     
     switch(type) {
         case 'start':
-            text = start.replace('time', `${time}`).replace('[player1]', player1.name).replace('[player2]', player2.name);
+            text = start.replace('time', `${time}`)
+                .replace('[player1]', player1.name)
+                .replace('[player2]', player2.name);
             el = `<p>${text}</p>`;
             break;
 
         case 'hit':
-                text = hit[randomDamage(hit.length - 1)].replace('time', `${time}`).replace('[playerKick]', player1.name).replace('[playerDefence]', player2.name);
+                text = hit[randomDamage(hit.length - 1)]
+                    .replace('time', `${time}`)
+                    .replace('[playerKick]', player1.name)
+                    .replace('[playerDefence]', player2.name);
                 el = `<p>${text} - ${player1.hp} ${player2.hp/100}</p>`;
             break;
 
         case 'defence':
-            text = defence[randomDamage(defence.length - 1)].replace('time', `${time}`).replace('[playerKick]', player2.name).replace('[playerDefence]', player1.name);
+            text = defence[randomDamage(defence.length - 1)]
+                .replace('time', `${time}`)
+                .replace('[playerKick]', player2.name)
+                .replace('[playerDefence]', player1.name);
             el = `<p>${text} - ${player2.hp} ${player1.hp/100}</p>`;
             break;
         
         case 'end':
-            text = end[randomDamage(end.length - 1)].replace('time', `${time}`).replace('[playerWins]', player2.name).replace('[playerLose]', player1.name);
+            text = end[randomDamage(end.length - 1)]
+                .replace('time', `${time}`)
+                .replace('[playerWins]', player2.name)
+                .replace('[playerLose]', player1.name);
             el = `<p>${text}</p>`;
             break;
 

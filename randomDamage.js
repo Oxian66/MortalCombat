@@ -1,2 +1,2 @@
-const randomDamage = damage => Math.ceil(Math.random() * damage);
-export default randomDamage;
+const getRandom = num => Math.ceil(Math.random() * num);
+export default getRandom;

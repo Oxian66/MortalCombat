@@ -1,4 +1,4 @@
-import randomDamage from "./randomDamage.js";
+import getRandom from "./randomDamage.js";
 export const HIT = {
     head: 30,
     body: 25,
@@ -7,11 +7,11 @@ export const HIT = {
 export const ATTACK = ['head', 'body', 'foot'];
 
 const enemyAttack = () => {
-    const hit = ATTACK[randomDamage(3) - 1];
-    const defence = ATTACK[randomDamage(3) - 1];
+    const hit = ATTACK[getRandom(3) - 1];
+    const defence = ATTACK[getRandom(3) - 1];
     
     return {
-        value: randomDamage(HIT[hit]),
+        value: getRandom(HIT[hit]),
         hit,
         defence,
     }

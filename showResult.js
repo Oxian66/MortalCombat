@@ -1,9 +1,9 @@
 import createReloadButton from './createReloadButton.js'
 import generateLogs from './generateLogs.js'
 import { $arenas, $randomButton } from './utils.js';
-import { player1, player2 } from './createPlayer.js';
+//import Player from './player.js';
 import playerWins from './playerWins.js'
-const showResult = () => {
+const showResult = (player1, player2) => {
     if (player1.hp === 0 || player2.hp === 0) {
         $randomButton.disabled = true;
         createReloadButton();

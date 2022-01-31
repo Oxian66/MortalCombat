@@ -45,5 +45,4 @@ export default class Player {
         $character.appendChild($img);
         return $player;
     }
-
 }

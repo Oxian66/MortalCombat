@@ -4,7 +4,6 @@ import showResult from './showResult.js';
 import generateLogs from './generateLogs.js';
 import { $arenas, $formFight } from './utils.js';
 import Player from './player.js';
-import getRandom from './randomDamage.js'
 
 let player1;
 let player2;
@@ -36,20 +35,15 @@ export default class Game {
           return result;
         }
         start = async () => {
-            const players = await this.getPlayers();
-            //const p1 = players[getRandom(players.length) - 1];
-            //const p2 = players[getRandom(players.length) - 1];
             const p1 = await this.getRandomPlayer();
             const p2 = await this.getRandomPlayer();
             player1 = new Player({
                 ...p1,
                 player: 1,
-                //rootSelector: 'arenas',
             });
             player2 = new Player({
                 ...p2,
                 player: 2,
-                //rootSelector: 'arenas',
             })
 
         $arenas.appendChild(player1.createPlayer());
@@ -76,9 +70,7 @@ export default class Game {
 	        } else {
 		        generateLogs('defence', player1, player2);
             }
-
             showResult(player1, player2);
         });
-    //}
 }
 }

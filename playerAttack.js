@@ -14,7 +14,6 @@ const playerAttack = () => {
         }
         item.checked = false;
     }
- 
     return attack;
 }
 export default playerAttack;

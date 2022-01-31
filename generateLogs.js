@@ -49,7 +49,6 @@ const generateLogs = (type, player1, player2) => {
     const normalize = (num) => (num.toString().length > 1 ? num : `0${num}`);
     const time = `${normalize(date.getHours())} : ${normalize(date.getMinutes())} : ${normalize(date.getMinutes())}`;
     
-    
     switch(type) {
         case 'start':
             text = start.replace('time', `${time}`)

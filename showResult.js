@@ -1,7 +1,6 @@
 import createReloadButton from './createReloadButton.js'
 import generateLogs from './generateLogs.js'
 import { $arenas, $randomButton } from './utils.js';
-//import Player from './player.js';
 import playerWins from './playerWins.js'
 const showResult = (player1, player2) => {
     if (player1.hp === 0 || player2.hp === 0) {

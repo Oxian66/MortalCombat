@@ -1,4 +1,4 @@
-import randomDamage from './randomDamage.js';
+import getRandom from './randomDamage.js';
 import createElement from './createElement.js';
 
 export default class Player {
@@ -10,7 +10,7 @@ export default class Player {
         this.weapon = props.weapon;
     }
     changeHp = damage => {
-        this.hp -= randomDamage(damage);
+        this.hp -= getRandom(damage);
         if (this.hp <= 0) {
             this.hp = 0;
         }

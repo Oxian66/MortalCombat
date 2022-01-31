@@ -1,4 +1,4 @@
-import randomDamage from "./randomDamage.js";
+import getRandom from './randomDamage.js';
 import { $chat } from "./utils.js";
 
 const logs = {
@@ -59,7 +59,7 @@ const generateLogs = (type, player1, player2) => {
             break;
 
         case 'hit':
-                text = hit[randomDamage(hit.length - 1)]
+                text = hit[getRandom(hit.length - 1)]
                     .replace('time', `${time}`)
                     .replace('[playerKick]', player1.name)
                     .replace('[playerDefence]', player2.name);
@@ -67,7 +67,7 @@ const generateLogs = (type, player1, player2) => {
             break;
 
         case 'defence':
-            text = defence[randomDamage(defence.length - 1)]
+            text = defence[getRandom(defence.length - 1)]
                 .replace('time', `${time}`)
                 .replace('[playerKick]', player2.name)
                 .replace('[playerDefence]', player1.name);
